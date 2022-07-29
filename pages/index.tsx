@@ -8,16 +8,6 @@ import toast from "react-hot-toast";
 export default function Home() {
   return (
     <div>
-      <Loader show />
-      <Link
-        prefetch={false}
-        href={{
-          pathname: "/[username]",
-          query: { username: "jeffd23" },
-        }}
-      >
-        <a>Jeff's profile</a>
-      </Link>
       <div>
         <button onClick={() => toast.success("hello toasty!")}>
           Toast me!
