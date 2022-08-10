@@ -22,11 +22,11 @@ export default function Navbar({}) {
                 <button className="btn-blue">Write Posts</button>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href={`/${username}`}>
-                <Image src={user?.photoURL} />
+                <Image src={user?.photoURL} width="30px" height="30px"/>
               </Link>
-            </li>
+            </li> */}
           </>
         )}
         {!username && (
