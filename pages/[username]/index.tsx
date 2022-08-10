@@ -13,6 +13,12 @@ export async function getServerSideProps({ query: urlQuery }) {
   let user = null;
   let posts = null;
 
+ // If no user, short circuit to 404 page
+ if (!userDoc) {
+  return {
+    notFound: true,
+  };
+}
   if (userDoc) {
     user = userDoc.data();
 
@@ -30,7 +36,7 @@ export async function getServerSideProps({ query: urlQuery }) {
   };
 }
 
-export default function UserProfilePage({}) {
+export default function UserProfilePage({ user, posts }) {
   return (
     <main>
       <UserProfile user={user} />
